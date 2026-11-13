@@ -95,7 +95,8 @@ function addToCart(product, quantity){
         productId: product.productId,
         productName: product.productName,
         price: product.price,
-        quantity: quantity
+        quantity: quantity,
+        totalPrice: product.price * quantity
     };
     cart[cart.length] = cartItem;
     console.log(product.productName + " added to cart!");
@@ -103,3 +104,93 @@ function addToCart(product, quantity){
 
 
 // display shopping cart
+function displayCart() {
+    console.log("==================================");
+    console.log("          SHOPPING CART");
+    console.log("==================================");
+    console.log(
+        cart[0].productName +
+        " | Price: Rs." + cart[0].price +
+        " | Quantity: " + cart[0].quantity
+    );
+    console.log(
+        cart[1].productName +
+        " | Price: Rs." + cart[1].price +
+        " | Quantity: " + cart[1].quantity
+    );
+    console.log(
+        cart[2].productName +
+        " | Price: Rs." + cart[2].price +
+        " | Quantity: " + cart[2].quantity
+    );
+    console.log("==================================");
+}
+
+// Display cart
+// displayCart();
+
+/*
+Note: This first version displays three cart 
+items because we are avoiding loops. 
+We will keep this limitation in mind 
+while building the project. */
+// Prodcuts Array
+// contains all available products
+// ->
+// addToCart(product, quantity)
+// ->
+// Receives product and quantity
+// ->
+// Cart Array
+// ->
+// Stores selected product objects
+// ->
+// displayCart()
+// ->
+// Displays selected items
+
+
+
+// Product-wise Price Calculation
+
+function displayCalculatedPrices() {
+    console.log("==============================================");
+    console.log("             PRODUCT PRICE DETAILS");
+    console.log("==============================================");
+    console.log(
+        cart[0].productName + " | " +
+        cart[0].price + " x " +
+        cart[0].quantity + " = Rs." +
+        cart[0].totalPrice
+    );
+    console.log(
+        cart[1].productName + " | " +
+        cart[1].price + " x " +
+        cart[1].quantity + " = Rs." +
+        cart[1].totalPrice
+    );
+    console.log(
+        cart[2].productName + " | " +
+        cart[2].price + " x " +
+        cart[2].quantity + " = Rs." +
+        cart[2].totalPrice
+    );
+    console.log(
+        cart[3].productName + " | " +
+        cart[3].price + " x " +
+        cart[3].quantity + " = Rs." +
+        cart[3].totalPrice
+    );
+    console.log(
+        cart[4].productName + " | " +
+        cart[4].price + " x " +
+        cart[4].quantity + " = Rs." +
+        cart[4].totalPrice
+    );
+    console.log("==============================================");
+}
+
+// displayCalculatedPrices();
+
+// Subtotal Calculation
+
